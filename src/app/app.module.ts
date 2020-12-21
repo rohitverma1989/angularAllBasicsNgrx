@@ -4,30 +4,35 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
-import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
-import { Routes } from '@angular/router';
+import { BasicHighlightDirective } from './directives/basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './directives/better-highlight/better-highlight.directive';
+import { RouterModule, Routes } from '@angular/router';
 import { ServersComponent } from './modules/servers/servers.component';
 import { UsersComponent } from './modules/users/users.component';
+import { UsersService } from './services/users.service';
 
 const appRoutes: Routes = [
-  { path: "", component: AppComponent },
-  { path: "/servers", component: ServersComponent },
-  { path: "/users", component: UsersComponent },
+  { path: "servers", component: ServersComponent },
+  { path: "users", component: UsersComponent },
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
+    UsersComponent,
+    ServersComponent,
     BasicHighlightDirective,
     BetterHighlightDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    UsersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,16 @@
-users component
+<h5> Users</h5>
+
+<div class="card-columns">
+  <div *ngFor="let user of users">
+    <div class="card" style="width: 12rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span> {{user.name}}</span>
+          <span> ({{user.id}})</span>
+        </h5>
+        <p class="card-text">Some quick example text to build.</p>
+        <a class="btn btn-sm btn-outline-primary">Details</a>
+      </div>
+    </div>
+  </div>
+</div>

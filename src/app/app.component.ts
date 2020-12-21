@@ -10,16 +10,12 @@ export class AppComponent {
 
   constructor(private router: Router) { }
 
-  goToHome() {
-    this.router.navigate(["/home"]);
-  }
   goToUsers() {
-    this.router.navigate(["/users"]);
-
+    this.router.navigate(["users"]);
   }
-  goToServers() {
-    this.router.navigate(["/servers"]);
 
+  goToServers() {
+    this.router.navigate(["servers"]);
   }
 
 }
