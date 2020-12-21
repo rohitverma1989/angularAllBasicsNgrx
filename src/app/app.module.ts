@@ -10,10 +10,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ServersComponent } from './modules/servers/servers.component';
 import { UsersComponent } from './modules/users/users.component';
 import { UsersService } from './services/users.service';
+import { UserComponent } from './modules/users/user/user.component';
 
 const appRoutes: Routes = [
   { path: "servers", component: ServersComponent },
   { path: "users", component: UsersComponent },
+  { path: "user/:id", component: UserComponent },
 ]
 
 @NgModule({

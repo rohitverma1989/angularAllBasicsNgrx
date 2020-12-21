@@ -19,5 +19,9 @@ export class UsersComponent implements OnInit {
     this.users = this.usersService.getAllUsers();
   }
 
+  goToUserDetails(userId: string) {
+    this.router.navigate(["/user", userId]);
+  }
+
 
 }
