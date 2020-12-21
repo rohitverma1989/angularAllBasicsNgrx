@@ -11,12 +11,15 @@ import { ServersComponent } from './modules/servers/servers.component';
 import { UsersComponent } from './modules/users/users.component';
 import { UsersService } from './services/users.service';
 import { UserComponent } from './modules/users/user/user.component';
+import { EditUserComponent } from './modules/users/user/edit-user/edit-user.component';
+import { CommonModule } from '@angular/common';
 
 const appRoutes: Routes = [
   { path: "servers", component: ServersComponent },
   {
     path: "users", component: UsersComponent, children: [
       { path: ":id", component: UserComponent },
+      { path: ":id/edit", component: EditUserComponent },
     ]
   },
 
@@ -27,13 +30,15 @@ const appRoutes: Routes = [
     AppComponent,
     UsersComponent,
     ServersComponent,
+    EditUserComponent,
     BasicHighlightDirective,
     BetterHighlightDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    CommonModule,
     FormsModule,
+    AppRoutingModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

@@ -10,7 +10,9 @@ import { UsersService } from "src/app/services/users.service";
 })
 export class UserComponent implements OnInit, OnDestroy {
   user: UserModel;
+  allowEdit: boolean;
   paramSubscription: Subscription;
+  querySubscription: Subscription;
 
   constructor(private router: Router, private route: ActivatedRoute, private usersService: UsersService) { }
 
@@ -19,6 +21,18 @@ export class UserComponent implements OnInit, OnDestroy {
       var userId = param["id"];
       this.user = this.usersService.getUserById(userId);
     });
+
+    this.querySubscription = this.route.queryParams.subscribe((param: Params) => {
+      debugger;
+      var allowEdit = param["allowEdit"];
+      this.allowEdit = allowEdit == '1' ? true : false;
+    });
+
+  }
+
+  onEditUser(userId: string) {
+    debugger;
+    this.router.navigate(["users", userId, "edit"], { queryParamsHandling: "merge" });
   }
 
   ngOnDestroy(): void {

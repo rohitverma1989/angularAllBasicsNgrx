@@ -15,13 +15,10 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debugger;
     this.users = this.usersService.getAllUsers();
   }
 
   goToUserDetails(userId: string) {
-    this.router.navigate(["/users", userId]);
+    this.router.navigate(["/users", userId], { queryParams: { allowEdit: userId == "2" ? '1' : 0 } });
   }
-
-
 }
