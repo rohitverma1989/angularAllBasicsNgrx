@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit {
   }
 
   goToUserDetails(userId: string) {
-    this.router.navigate(["/user", userId]);
+    this.router.navigate(["/users", userId]);
   }
 
 
