@@ -7,12 +7,13 @@ import { AppComponent } from './app.component';
 import { BasicHighlightDirective } from './directives/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './directives/better-highlight/better-highlight.directive';
 import { RouterModule, Routes } from '@angular/router';
-import { ServersComponent } from './modules/servers/servers.component';
-import { UsersComponent } from './modules/users/users.component';
+import { ServersComponent } from './components/servers/servers.component';
+import { UsersComponent } from './components/users/users.component';
 import { UsersService } from './services/users.service';
-import { UserComponent } from './modules/users/user/user.component';
-import { EditUserComponent } from './modules/users/user/edit-user/edit-user.component';
+import { UserComponent } from './components/users/user/user.component';
+import { EditUserComponent } from './components/users/user/edit-user/edit-user.component';
 import { CommonModule } from '@angular/common';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const appRoutes: Routes = [
   { path: "servers", component: ServersComponent },
@@ -22,6 +23,8 @@ const appRoutes: Routes = [
       { path: ":id/edit", component: EditUserComponent },
     ]
   },
+  { path: "not-found", component: NotFoundComponent },
+  { path: "**", redirectTo: "not-found" }
 
 ]
 
@@ -31,6 +34,7 @@ const appRoutes: Routes = [
     UsersComponent,
     ServersComponent,
     EditUserComponent,
+    NotFoundComponent,
     BasicHighlightDirective,
     BetterHighlightDirective
   ],
