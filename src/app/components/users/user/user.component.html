@@ -1,10 +1,23 @@
-<h5 class="text-secondary">User Details</h5>
-
-<div class="text-secondary">Name <em class="text-dark font-weight-bold"> {{user.name}} </em></div>
-<div class="text-secondary">Id <em class="text-dark font-weight-bold"> {{user.id}} </em></div>
-<!-- <div *ngIf="allowEdit"> -->
-<div>
-  <div class="btn btn-sm btn-primary" (click)="onEditUser(user.id)">
-    Edit
+<div class="row">
+  <div class="col">
+    <h5 class="text-secondary">User Details</h5>
+    <div class="text-secondary">Name <em class="text-dark font-weight-bold"> {{user.name}} </em></div>
+    <div class="text-secondary">Id <em class="text-dark font-weight-bold"> {{user.id}} </em></div>
   </div>
 </div>
+<div class="row" *ngIf="allowEdit; else tmpNotAllowed">
+  <div class="col">
+    <div class="btn btn-sm btn-primary" (click)="onEditUser(user.id)">
+      Edit
+    </div>
+  </div>
+</div>
+<ng-template #tmpNotAllowed>
+  <div class="row">
+    <div class="col">
+      <h5>
+        Edit Not Allowed
+      </h5>
+    </div>
+  </div>
+</ng-template>
