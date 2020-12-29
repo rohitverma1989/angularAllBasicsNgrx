@@ -16,17 +16,7 @@ import { BasicHighlightDirective } from './directives/basic-highlight/basic-high
 import { BetterHighlightDirective } from './directives/better-highlight/better-highlight.directive';
 import { UsersService } from './services/users.service';
 
-const appRoutes: Routes = [
-  { path: "servers", component: ServersComponent },
-  {
-    path: "users", component: UsersComponent, children: [
-      { path: ":id", component: UserComponent },
-      { path: ":id/edit", component: EditUserComponent },
-    ]
-  },
-  { path: "not-found", component: NotFoundComponent },
-  { path: "**", redirectTo: "not-found" }
-]
+
 
 @NgModule({
   declarations: [
@@ -44,7 +34,6 @@ const appRoutes: Routes = [
     CommonModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     UsersService
