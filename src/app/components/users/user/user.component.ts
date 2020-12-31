@@ -22,6 +22,7 @@ export class UserComponent implements OnInit, OnDestroy {
       this.user = this.usersService.getUserById(userId);
     });
 
+
     this.querySubscription = this.activatedRoute.queryParams.subscribe((param: Params) => {
       debugger;
       var allowEdit = param["allowEdit"];
