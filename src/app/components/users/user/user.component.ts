@@ -21,14 +21,12 @@ export class UserComponent implements OnInit, OnDestroy {
       var userId = param["id"];
       this.user = this.usersService.getUserById(userId);
       this.usersService.userRouteActivated.subscribe((data) => {
-        debugger;
         alert("subject data is : " + data)
       })
     });
 
 
     this.querySubscription = this.activatedRoute.queryParams.subscribe((param: Params) => {
-      debugger;
       var allowEdit = param["allowEdit"];
       this.allowEdit = allowEdit == '1' ? true : false;
     });
@@ -36,7 +34,6 @@ export class UserComponent implements OnInit, OnDestroy {
   }
 
   onEditUser(userId: string) {
-    debugger;
     this.router.navigate(["users", userId, "edit"], { queryParamsHandling: "merge" });
   }
 

@@ -16,6 +16,7 @@ import { BasicHighlightDirective } from './directives/basic-highlight/basic-high
 import { BetterHighlightDirective } from './directives/better-highlight/better-highlight.directive';
 import { UsersService } from './services/users.service';
 import { HomeComponent } from './components/home/home.component';
+import { OperatorsComponent } from './components/operators/operators.component';
 
 
 
@@ -27,6 +28,7 @@ import { HomeComponent } from './components/home/home.component';
     ServersComponent,
     EditUserComponent,
     NotFoundComponent,
+    OperatorsComponent,
     HomeComponent,
     BasicHighlightDirective,
     BetterHighlightDirective
