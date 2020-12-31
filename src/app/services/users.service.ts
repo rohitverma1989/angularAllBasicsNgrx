@@ -1,8 +1,11 @@
 import { OnInit } from "@angular/core";
+import { Subject } from "rxjs";
 import { UserModel } from "../models/user.model";
 
 
 export class UsersService {
+
+  userRouteActivated = new Subject();
 
   users: UserModel[] = [
 

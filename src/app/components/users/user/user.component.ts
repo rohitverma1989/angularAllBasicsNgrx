@@ -20,6 +20,10 @@ export class UserComponent implements OnInit, OnDestroy {
     this.paramSubscription = this.activatedRoute.params.subscribe((param: Params) => {
       var userId = param["id"];
       this.user = this.usersService.getUserById(userId);
+      this.usersService.userRouteActivated.subscribe((data) => {
+        debugger;
+        alert("subject data is : " + data)
+      })
     });
 
 

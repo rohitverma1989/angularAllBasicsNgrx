@@ -16,6 +16,8 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.users = this.usersService.getAllUsers();
+    debugger;
+    this.usersService.userRouteActivated.next(1);
   }
 
   goToUserDetails(userId: string) {
