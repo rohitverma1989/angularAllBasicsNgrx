@@ -18,7 +18,8 @@
         <div class="form-group">
           <label for="userEmail">Email</label><br>
           <input placeholder="eg. Smith@xyz.com" class="form-control" type="email" id="idUserEmail" name="userEmail"
-            ngModel email required>
+            ngModel email required #userEmail="ngModel">
+          <span class="help-block" *ngIf="!userEmail.valid && userEmail.touched">Please enter valid email !</span>
         </div>
         <button type="submit" class="btn btn-primary my-3 form-control testss"
           [disabled]="!frmUsrReg.valid">Save</button>
