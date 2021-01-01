@@ -17,6 +17,7 @@ import { BetterHighlightDirective } from './directives/better-highlight/better-h
 import { UsersService } from './services/users.service';
 import { HomeComponent } from './components/home/home.component';
 import { OperatorsComponent } from './components/operators/operators.component';
+import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
 
 
 
@@ -30,6 +31,7 @@ import { OperatorsComponent } from './components/operators/operators.component';
     NotFoundComponent,
     OperatorsComponent,
     HomeComponent,
+    UserRegistrationFormComponent,
     BasicHighlightDirective,
     BetterHighlightDirective
   ],

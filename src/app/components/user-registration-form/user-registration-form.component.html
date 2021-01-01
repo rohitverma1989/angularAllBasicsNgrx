@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form class="form-group" (ngSubmit)="onSubmit(frmUsrReg)" #frmUsrReg="ngForm">
+        <label for="userFirstName">First Name</label><br>
+        <input ngModel placeholder="eg. Joe" class="form-control" type="text" id="idUserFirstName"
+          name="userFirstName"><br>
+        <label for="userLastName">Last Name</label><br>
+        <input ngModel placeholder="eg. Smith" class="form-control" type="text" id="idUserLastName" name="userLastName">
+        <button type="submit" class="btn btn-primary my-3 form-control">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
