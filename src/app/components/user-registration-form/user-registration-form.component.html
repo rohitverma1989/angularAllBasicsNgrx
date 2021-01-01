@@ -1,18 +1,27 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <form class="form-group" (ngSubmit)="onSubmit(frmUsrReg)" #frmUsrReg="ngForm">
-        <label for="userFirstName">First Name</label><br>
-        <input placeholder="eg. Joe" class="form-control" type="text" id="idUserFirstName" name="userFirstName" ngModel
-          required><br>
-        <label for="userLastName">Last Name</label><br>
-        <input placeholder="eg. Smith" class="form-control" type="text" id="idUserLastName" name="userLastName" ngModel
-          required>
+      <form (ngSubmit)="onSubmit(frmUsrReg)" #frmUsrReg="ngForm">
+        <div class="form-group">
 
-        <label for="userEmail">Email</label><br>
-        <input placeholder="eg. Smith@xyz.com" class="form-control" type="email" id="idUserEmail" name="userEmail"
-          ngModel email required>
-        <button type="submit" class="btn btn-primary my-3 form-control">Save</button>
+          <label for="userFirstName">First Name</label><br>
+          <input placeholder="eg. Joe" class="form-control" type="text" id="idUserFirstName" name="userFirstName"
+            ngModel required><br>
+        </div>
+
+        <div class="form-group">
+          <label for="userLastName">Last Name</label><br>
+          <input placeholder="eg. Smith" class="form-control" type="text" id="idUserLastName" name="userLastName"
+            ngModel required>
+        </div>
+
+        <div class="form-group">
+          <label for="userEmail">Email</label><br>
+          <input placeholder="eg. Smith@xyz.com" class="form-control" type="email" id="idUserEmail" name="userEmail"
+            ngModel email required>
+        </div>
+        <button type="submit" class="btn btn-primary my-3 form-control testss"
+          [disabled]="!frmUsrReg.valid">Save</button>
       </form>
     </div>
   </div>

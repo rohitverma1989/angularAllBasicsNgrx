@@ -3,7 +3,8 @@ import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "userRegistrationForm",
-  templateUrl: "./user-registration-form.component.html"
+  templateUrl: "./user-registration-form.component.html",
+  styleUrls: ["./user-registration-form.component.css"]
 })
 export class UserRegistrationFormComponent {
 
