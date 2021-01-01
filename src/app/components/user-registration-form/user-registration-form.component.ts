@@ -9,14 +9,7 @@ export class UserRegistrationFormComponent {
 
   @ViewChild('frmUsrReg') formUserRegistration: NgForm;
 
-  // onSubmit(frmUsrReg: NgForm) {
-  //   console.log(frmUsrReg);
-  // }
-
-
   onSubmit(frmUsrReg: NgForm) {
-    debugger;
     console.log(this.formUserRegistration);
   }
-
 }

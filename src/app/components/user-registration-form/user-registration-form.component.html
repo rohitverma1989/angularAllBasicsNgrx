@@ -3,10 +3,15 @@
     <div class="col">
       <form class="form-group" (ngSubmit)="onSubmit(frmUsrReg)" #frmUsrReg="ngForm">
         <label for="userFirstName">First Name</label><br>
-        <input ngModel placeholder="eg. Joe" class="form-control" type="text" id="idUserFirstName"
-          name="userFirstName"><br>
+        <input placeholder="eg. Joe" class="form-control" type="text" id="idUserFirstName" name="userFirstName" ngModel
+          required><br>
         <label for="userLastName">Last Name</label><br>
-        <input ngModel placeholder="eg. Smith" class="form-control" type="text" id="idUserLastName" name="userLastName">
+        <input placeholder="eg. Smith" class="form-control" type="text" id="idUserLastName" name="userLastName" ngModel
+          required>
+
+        <label for="userEmail">Email</label><br>
+        <input placeholder="eg. Smith@xyz.com" class="form-control" type="email" id="idUserEmail" name="userEmail"
+          ngModel email required>
         <button type="submit" class="btn btn-primary my-3 form-control">Save</button>
       </form>
     </div>
