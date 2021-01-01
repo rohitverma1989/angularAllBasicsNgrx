@@ -7,7 +7,7 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./user-registration-form.component.css"]
 })
 export class UserRegistrationFormComponent {
-
+  defaultUserName = "Rohit";
   @ViewChild('frmUsrReg') formUserRegistration: NgForm;
 
   onSubmit(frmUsrReg: NgForm) {
