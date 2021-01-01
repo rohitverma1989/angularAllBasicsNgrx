@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
 @Component({
@@ -7,11 +7,16 @@ import { NgForm } from "@angular/forms";
 })
 export class UserRegistrationFormComponent {
 
+  @ViewChild('frmUsrReg') formUserRegistration: NgForm;
 
-  // onSubmit(frmUsrReg: HTMLFormElement) {
-  // onSubmit(frmUsrReg: ElementRef) {
+  // onSubmit(frmUsrReg: NgForm) {
+  //   console.log(frmUsrReg);
+  // }
+
+
   onSubmit(frmUsrReg: NgForm) {
-    console.log(frmUsrReg);
+    debugger;
+    console.log(this.formUserRegistration);
   }
 
 }
