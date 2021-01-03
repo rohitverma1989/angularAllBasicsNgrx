@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -18,6 +18,7 @@ import { UsersService } from './services/users.service';
 import { HomeComponent } from './components/home/home.component';
 import { OperatorsComponent } from './components/operators/operators.component';
 import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 
 
@@ -32,6 +33,7 @@ import { UserRegistrationFormComponent } from './components/user-registration-fo
     OperatorsComponent,
     HomeComponent,
     UserRegistrationFormComponent,
+    ReactiveFormComponent,
     BasicHighlightDirective,
     BetterHighlightDirective
   ],
@@ -39,6 +41,7 @@ import { UserRegistrationFormComponent } from './components/user-registration-fo
     BrowserModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
   ],
   providers: [

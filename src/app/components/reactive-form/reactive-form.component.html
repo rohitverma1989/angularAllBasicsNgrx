@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h5>Reactive form Demo</h5>
+      <form [formGroup]="signupForm">
+        <div class="form-group">
+
+          <label>First Name</label><br>
+          <input id="firstName" placeholder="eg. Joe" class="form-control" type="text" formControlName="firstName"><br>
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label><br>
+          <input formControlName="lastName" id="lastName" placeholder="eg. Smith" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="userEmail">Email</label><br>
+          <input formControlName="email" id="email" placeholder="eg. Smith@xyz.com" class="form-control" type="email">
+          <span class="help-block">Please enter valid email !</span>
+        </div>
+        <button type="submit" class="btn btn-primary my-3 form-control testss">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
