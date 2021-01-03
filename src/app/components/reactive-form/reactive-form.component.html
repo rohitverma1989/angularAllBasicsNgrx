@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <h5>Reactive form Demo</h5>
-      <form [formGroup]="signupForm">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
 
           <label>First Name</label><br>

@@ -10,7 +10,6 @@ export class ReactiveFormComponent implements OnInit {
   genders = ['male', 'female'];
   signupForm: FormGroup;
 
-
   ngOnInit(): void {
     this.signupForm = new FormGroup(
       {
@@ -19,4 +18,9 @@ export class ReactiveFormComponent implements OnInit {
         'email': new FormControl('test@test.com'),
       });
   }
+
+  onSubmit() {
+    console.log(this.signupForm);
+  }
+
 }
