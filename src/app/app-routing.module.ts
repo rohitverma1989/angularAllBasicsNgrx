@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { NotFoundComponent } from "./components/not-found/not-found.component";
-import { ServersComponent } from "./components/servers/servers.component";
-import { EditUserComponent } from "./components/users/user/edit-user/edit-user.component";
-import { UserComponent } from "./components/users/user/user.component";
-import { UsersComponent } from "./components/users/users.component";
+import { NotFoundComponent } from "./modules/not-found/not-found.component";
+import { ServersComponent } from "./modules/servers/servers.component";
+import { EditUserComponent } from "./modules/users/user/edit-user/edit-user.component";
+import { UserComponent } from "./modules/users/user/user.component";
+import { UsersComponent } from "./modules/users/users.component";
 
 const appRoutes: Routes = [
   { path: "servers", component: ServersComponent },
