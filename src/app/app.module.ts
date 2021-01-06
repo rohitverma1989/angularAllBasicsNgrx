@@ -40,7 +40,7 @@ import { UsersService } from './services/users.service';
     ReactiveFormsModule,
     AppRoutingModule,
     UsersModule,
-    AdminModule
+
   ],
   providers: [
     UsersService

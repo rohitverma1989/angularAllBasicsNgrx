@@ -1,4 +1,5 @@
 export class UserModel {
-  name: string;
-  id: string;
+
+  constructor(public name: string, public id: string) { }
+
 }
