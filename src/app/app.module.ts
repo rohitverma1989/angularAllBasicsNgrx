@@ -7,9 +7,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ServersComponent } from './modules/servers/servers.component';
-import { UsersComponent } from './modules/users/users.component';
-import { EditUserComponent } from './modules/users/user/edit-user/edit-user.component';
-import { UserComponent } from './modules/users/user/user.component';
 import { NotFoundComponent } from './modules/not-found/not-found.component';
 
 import { BasicHighlightDirective } from './directives/basic-highlight/basic-highlight.directive';
@@ -19,16 +16,14 @@ import { HomeComponent } from './modules/home/home.component';
 import { OperatorsComponent } from './modules/operators/operators.component';
 import { UserRegistrationFormComponent } from './modules/user-registration-form/user-registration-form.component';
 import { ReactiveFormComponent } from './modules/reactive-form/reactive-form.component';
+import { UsersModule } from './modules/users/users.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent,
-    UserComponent,
     ServersComponent,
-    EditUserComponent,
     NotFoundComponent,
     OperatorsComponent,
     HomeComponent,
@@ -43,6 +38,7 @@ import { ReactiveFormComponent } from './modules/reactive-form/reactive-form.com
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    UsersModule
   ],
   providers: [
     UsersService

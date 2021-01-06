@@ -11,6 +11,7 @@ export class AppComponent {
   constructor(private router: Router) { }
 
   goToUsers() {
+    debugger;
     this.router.navigate(["users"]);
   }
 
