@@ -5,6 +5,7 @@ import { ServersComponent } from "./modules/servers/servers.component";
 
 const appRoutes: Routes = [
   { path: "servers", component: ServersComponent },
+  { path: "admin", loadChildren: "./modules/admin/admin.module#AdminModule" },
   // {
   //   path: "users", component: UsersComponent, children: [
   //     { path: ":id", component: UserComponent },

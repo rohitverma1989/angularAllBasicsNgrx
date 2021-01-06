@@ -11,12 +11,16 @@ export class AppComponent {
   constructor(private router: Router) { }
 
   goToUsers() {
-    debugger;
     this.router.navigate(["users"]);
   }
 
   goToServers() {
     this.router.navigate(["servers"]);
+  }
+
+  goToAdmin() {
+    this.router.navigate(["admin"]);
+
   }
 
 }
