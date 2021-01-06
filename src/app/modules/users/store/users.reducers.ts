@@ -1,7 +1,7 @@
 import { Action } from "@ngrx/store";
 import { UserModel } from "src/app/models/user.model";
 
-export const USERS_ADD = "USERS_ADD";
+import * as usersActions from "./users.actions";
 
 const initial_state = {
   users: [
@@ -10,13 +10,14 @@ const initial_state = {
   ]
 }
 
-export function usersReducers(state = initial_state, action: Action) {
+export function usersReducers(state = initial_state, action: usersActions.UsersActions) {
 
   switch (action.type) {
-    case USERS_ADD:
+    case usersActions.USERS_ADD:
       return {
         ...state,
-        users: [...state.users, action]
+        users: [...state.users, action.payload]
       }
+    default: return state;
   }
 }
