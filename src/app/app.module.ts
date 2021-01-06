@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UsersModule } from './modules/users/users.module';
-import { AdminModule } from './modules/admin/admin.module';
 
 import { AppComponent } from './app.component';
 import { ServersComponent } from './modules/servers/servers.component';
@@ -18,6 +17,8 @@ import { BasicHighlightDirective } from './directives/basic-highlight/basic-high
 import { BetterHighlightDirective } from './directives/better-highlight/better-highlight.directive';
 
 import { UsersService } from './services/users.service';
+import { StoreModule } from '@ngrx/store';
+import { usersReducers } from './modules/users/store/users.reducers';
 
 
 
@@ -40,6 +41,7 @@ import { UsersService } from './services/users.service';
     ReactiveFormsModule,
     AppRoutingModule,
     UsersModule,
+    StoreModule.forRoot({ usersState: usersReducers })
 
   ],
   providers: [
