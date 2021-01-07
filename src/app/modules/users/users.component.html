@@ -1,12 +1,13 @@
 <h5> Users</h5>
 
 <div class="card-columns">
-  <div *ngFor="let user of (allUsersState | async).users">
+  <div *ngFor="let user of users">
     <div class="card" style="width: 12rem;">
       <div class="card-body">
         <h5 class="card-title">
           <span> {{user.name}}</span>
           <span> ({{user.id}})</span>
+          is loading value : {{isLoading$|async}}
         </h5>
         <p class="card-text">Some quick example text to build.</p>
         <a class="btn btn-sm btn-outline-primary" (click)="goToUserDetails(user.id)">Details</a>

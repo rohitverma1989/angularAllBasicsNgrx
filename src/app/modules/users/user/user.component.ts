@@ -4,7 +4,9 @@ import { Store } from "@ngrx/store";
 import { Subscription } from "rxjs";
 import { UserModel } from "src/app/models/user.model";
 import { UsersService } from "src/app/services/users.service";
-import * as usersActions from "../../users/store/users.actions";
+
+import * as fromUserReducer from "../store/users.reducers";
+
 @Component({
   selector: "[usersUser]",
   templateUrl: "./user.component.html"
@@ -15,23 +17,23 @@ export class UserComponent implements OnInit, OnDestroy {
   paramSubscription: Subscription;
   querySubscription: Subscription;
 
+
+
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     private usersService: UsersService,
-    private store: Store<{ usersState: { user: UserModel } }>) { }
+    private store: Store<{ usersData: fromUserReducer.State }>) { }
 
   ngOnInit(): void {
     this.paramSubscription = this.activatedRoute.params.subscribe((param: Params) => {
       var userId = param["id"];
 
-      debugger;
-      // this.user = this.usersService.getUserById(userId);
-      this.store.dispatch(new usersActions.GetUserUserById(userId));
-      this.store.select("usersState").subscribe(
-        (data) => {
-          debugger;
-          this.user = data.user;
-        }
-      )
+      this.user = this.usersService.getUserById(userId);
+      // this.store.select("usersState").subscribe(
+      //   (data) => {
+      //     debugger;
+      //     this.user = data.user;
+      //   }
+      // )
 
 
       this.usersService.userRouteActivated.subscribe((data) => {
@@ -53,5 +55,15 @@ export class UserComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.paramSubscription.unsubscribe();
+  }
+
+  onLoad() {
+    this.store.dispatch({ type: "START_LOADING" });
+
+  }
+
+  onUnload() {
+    this.store.dispatch({ type: "STOP_LOADING" });
+
   }
 }

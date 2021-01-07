@@ -18,8 +18,7 @@ import { BetterHighlightDirective } from './directives/better-highlight/better-h
 
 import { UsersService } from './services/users.service';
 import { StoreModule } from '@ngrx/store';
-import { usersReducers } from './modules/users/store/users.reducers';
-
+import { UsersReducer } from './modules/users/store/users.reducers';
 
 
 @NgModule({
@@ -41,7 +40,7 @@ import { usersReducers } from './modules/users/store/users.reducers';
     ReactiveFormsModule,
     AppRoutingModule,
     UsersModule,
-    StoreModule.forRoot({ usersState: usersReducers })
+    StoreModule.forRoot({ usersData: UsersReducer })
 
   ],
   providers: [
