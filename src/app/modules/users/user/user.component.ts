@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
+import { Store } from "@ngrx/store";
 import { Subscription } from "rxjs";
 import { UserModel } from "src/app/models/user.model";
 import { UsersService } from "src/app/services/users.service";
-
+import * as usersActions from "../../users/store/users.actions";
 @Component({
   selector: "[usersUser]",
   templateUrl: "./user.component.html"
@@ -14,12 +15,25 @@ export class UserComponent implements OnInit, OnDestroy {
   paramSubscription: Subscription;
   querySubscription: Subscription;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private usersService: UsersService) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute,
+    private usersService: UsersService,
+    private store: Store<{ usersState: { user: UserModel } }>) { }
 
   ngOnInit(): void {
     this.paramSubscription = this.activatedRoute.params.subscribe((param: Params) => {
       var userId = param["id"];
-      this.user = this.usersService.getUserById(userId);
+
+      debugger;
+      // this.user = this.usersService.getUserById(userId);
+      this.store.dispatch(new usersActions.GetUserUserById(userId));
+      this.store.select("usersState").subscribe(
+        (data) => {
+          debugger;
+          this.user = data.user;
+        }
+      )
+
+
       this.usersService.userRouteActivated.subscribe((data) => {
         alert("subject data is : " + data)
       })

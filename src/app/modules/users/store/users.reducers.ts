@@ -1,4 +1,5 @@
 import { Action } from "@ngrx/store";
+import { ActionSequence } from "protractor";
 import { UserModel } from "src/app/models/user.model";
 
 import * as usersActions from "./users.actions";
@@ -14,10 +15,27 @@ export function usersReducers(state = initial_state, action: usersActions.UsersA
 
   switch (action.type) {
     case usersActions.USERS_ADD:
-      return {
-        ...state,
-        users: [...state.users, action.payload]
+      {
+        alert("useradd state called");
+        return {
+          ...state,
+          users: [...state.users, action.payload]
+        }
       }
-    default: return state;
+
+    case usersActions.GET_USER_BY_ID:
+      {
+        alert("GetUserUserById state called");
+        debugger;
+        //     var user = this.users.filter(function (x) { return Number(x.id) == Number(id) });
+        // return user[0];
+        var id = action.payload;
+        var user = state.users.filter(function (x) { return Number(x.id) == Number(id) });
+        return user[0];
+      }
+    default: {
+      alert("default state called");
+      return state;
+    }
   }
 }
