@@ -13,7 +13,7 @@ import * as fromUserReducer from "./store/users.reducers";
   templateUrl: './users.component.html',
 })
 export class UsersComponent implements OnInit {
-  users: UserModel[];
+  users$: UserModel[];
   // isLoading$: Observable<boolean>;
   isLoading$: boolean;
 
@@ -23,15 +23,14 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.users = this.usersService.getAllUsers();
+    //this.users = this.usersService.getAllUsers();
 
     // this.isLoading$ = this.store.pipe(map(data => data.usersData.isLoading))
     this.store.select("usersData")
       .subscribe((data) => {
         // alert("sdfdsfdsfsd")
-        this.isLoading$ = data.isLoading
-        debugger;
-        this.users = data.users
+        this.isLoading$ = data.isLoading;
+        this.users$ = data.users;
       })
   }
 

@@ -6,6 +6,8 @@ import { UserModel } from "src/app/models/user.model";
 import { UsersService } from "src/app/services/users.service";
 
 import * as fromUserReducer from "../store/users.reducers";
+import * as fromUsersActions from "../store/users.actions"
+
 
 @Component({
   selector: "[usersUser]",
@@ -27,13 +29,13 @@ export class UserComponent implements OnInit, OnDestroy {
     this.paramSubscription = this.activatedRoute.params.subscribe((param: Params) => {
       var userId = param["id"];
 
-      this.user = this.usersService.getUserById(userId);
-      // this.store.select("usersState").subscribe(
-      //   (data) => {
-      //     debugger;
-      //     this.user = data.user;
-      //   }
-      // )
+      // this.user = this.usersService.getUserById(userId);
+      this.store.dispatch(new fromUsersActions.GetUserById(userId));
+      this.store.select("usersData").subscribe(
+        (data) => {
+          this.user = data.selectedUser;
+        }
+      )
 
 
       this.usersService.userRouteActivated.subscribe((data) => {
