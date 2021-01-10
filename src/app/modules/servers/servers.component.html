@@ -1,1 +1,19 @@
-servers component
+<h5> $ervers</h5>
+
+<div class="card-columns">
+  <div *ngFor="let server of servers$">
+    <div class="card" style="width: 12rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span> {{server.serverName}}</span>
+          <span> ({{server.serverId}})</span>
+        </h5>
+        <p class="card-text">Some quick example text to build.</p>
+        <!-- <a class="btn btn-sm btn-outline-primary" (click)="goToUserDetails(user.id)">Details</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>
