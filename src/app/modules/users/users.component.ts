@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -13,7 +14,8 @@ import * as fromUserReducer from "./store/users.reducers";
 })
 export class UsersComponent implements OnInit {
   users: UserModel[];
-  isLoading$: Observable<boolean>;
+  // isLoading$: Observable<boolean>;
+  isLoading$: boolean;
 
   constructor(private router: Router, private usersService: UsersService,
     private store: Store<{ usersData: fromUserReducer.State }>) {
@@ -23,7 +25,14 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.users = this.usersService.getAllUsers();
 
-    this.isLoading$ = this.store.pipe(map(data => data.usersData.isLoading))
+    // this.isLoading$ = this.store.pipe(map(data => data.usersData.isLoading))
+    this.store.select("usersData")
+      .subscribe((data) => {
+        // alert("sdfdsfdsfsd")
+        this.isLoading$ = data.isLoading
+        debugger;
+        this.users = data.users
+      })
   }
 
   goToUserDetails(userId: string) {
