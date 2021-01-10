@@ -41,7 +41,6 @@ import { UsersReducer } from './modules/users/store/users.reducers';
     AppRoutingModule,
     UsersModule,
     StoreModule.forRoot({ usersData: UsersReducer })
-
   ],
   providers: [
     UsersService

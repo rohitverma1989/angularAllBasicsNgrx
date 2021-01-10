@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col">
     <h5 class="text-secondary">User Details</h5>
-    <div class="text-secondary">Name <em class="text-dark font-weight-bold"> {{user.name}} </em></div>
-    <div class="text-secondary">Id <em class="text-dark font-weight-bold"> {{user.id}} </em></div>
+    <div class="text-secondary">Name <em class="text-dark font-weight-bold"> {{user$.name}} </em></div>
+    <div class="text-secondary">Id <em class="text-dark font-weight-bold"> {{user$.id}} </em></div>
 
     <button class="btn btn-primary" (click)="onLoad()">Loading</button>
     <button class="btn btn-danger" (click)="onUnload()">Unloading</button>
@@ -10,7 +10,7 @@
 </div>
 <div class="row" *ngIf="allowEdit; else tmpNotAllowed">
   <div class="col">
-    <div class="btn btn-sm btn-primary" (click)="onEditUser(user.id)">
+    <div class="btn btn-sm btn-primary" (click)="onEditUser(user$.id)">
       Edit
     </div>
   </div>

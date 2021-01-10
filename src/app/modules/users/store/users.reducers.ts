@@ -1,12 +1,6 @@
-import { Action } from "@ngrx/store";
 import { UserModel } from "src/app/models/user.model";
 import * as fromUsersActions from "./users.actions"
 
-
-
-export interface AppState {
-  usersState: State,
-}
 
 export interface State {
   isLoading: boolean,

@@ -14,7 +14,7 @@ import * as fromUsersActions from "../store/users.actions"
   templateUrl: "./user.component.html"
 })
 export class UserComponent implements OnInit, OnDestroy {
-  user: UserModel;
+  user$: UserModel;
   allowEdit: boolean = false;
   paramSubscription: Subscription;
   querySubscription: Subscription;
@@ -33,7 +33,7 @@ export class UserComponent implements OnInit, OnDestroy {
       this.store.dispatch(new fromUsersActions.GetUserById(userId));
       this.store.select("usersData").subscribe(
         (data) => {
-          this.user = data.selectedUser;
+          this.user$ = data.selectedUser;
         }
       )
 
