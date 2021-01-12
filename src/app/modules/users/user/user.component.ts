@@ -29,8 +29,12 @@ export class UserComponent implements OnInit, OnDestroy {
     this.paramSubscription = this.activatedRoute.params.subscribe((param: Params) => {
       var userId = param["id"];
 
+      const emp: fromUsersActions.UsersPayloadData = {
+        selectedUserId: userId
+      };
+
       // this.user = this.usersService.getUserById(userId);
-      this.store.dispatch(new fromUsersActions.GetUserById(userId));
+      this.store.dispatch(new fromUsersActions.GetUserById(emp));
       this.store.select("usersData").subscribe(
         (data) => {
           this.user$ = data.selectedUser;
