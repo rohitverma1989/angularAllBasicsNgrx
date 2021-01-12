@@ -17,12 +17,12 @@ export class UsersComponent implements OnInit {
   constructor(private router: Router,
     private store: Store<{ usersData: fromUserReducer.State }>,
     private usersService: UsersService) {
-    debugger;
-    this.usersService.getAllUsers();
   }
 
   ngOnInit(): void {
 
+    debugger;
+    this.usersService.getAllUsers();
 
     // this.isLoading$ = this.store.pipe(map(data => data.usersData.isLoading))
     this.store.select("usersData")
