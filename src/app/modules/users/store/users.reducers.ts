@@ -5,7 +5,8 @@ import * as fromUsersActions from "./users.actions"
 export interface State {
   isLoading: boolean,
   users: UserModel[],
-  selectedUser: UserModel
+  selectedUser: UserModel,
+  employees: string[]
 }
 
 const initialState: State = {
@@ -15,7 +16,8 @@ const initialState: State = {
     new UserModel("riva from reducer", "2"),
     new UserModel("shikha from reducer", "3"),
   ],
-  selectedUser: null
+  selectedUser: null,
+  employees: []
 };
 
 export function UsersReducer(state = initialState, action: fromUsersActions.UsersActions) {
@@ -26,10 +28,15 @@ export function UsersReducer(state = initialState, action: fromUsersActions.User
     case fromUsersActions.STOP_LOADING:
       return { ...state, isLoading: false, users: state.users }
     case fromUsersActions.GET_USER_BY_ID:
-      debugger;
-      var userId = action.payload;
+      var userId = action.payload.selectedUserId;
       var user = state.users.filter(function (x) { return Number(x.id) == Number(userId) });
       return { ...state, selectedUser: user[0] }
+    case fromUsersActions.GET_ALL_EMPLOYEES:
+      {
+        debugger;
+        var emp = action.payload.employees;
+        return { ...state, employees: emp }
+      }
 
     default: return state;
   }

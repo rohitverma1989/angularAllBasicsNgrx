@@ -9,5 +9,6 @@ export interface AppState {
 
 export const appReducers: ActionReducerMap<AppState> = {
   usersData: fromUserReducer.UsersReducer,
+  // usersData: fromUserReducer.UsersReducer,
   serversData: fromServerReducer.ServersReducer
 }
