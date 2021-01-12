@@ -18,19 +18,25 @@ export class UsersService {
 
   }
 
-  getAllUsers() {
-    this.httpClient
-      .get<string[]>("http://localhost:3899/api/GetAllEmployees")
-      .pipe(map((employees) => { return employees }))
-      .subscribe((emp: string[]) => {
-        debugger;
-        this.apiEmployees = emp;
-      });
+  // getAllUsers() {
+  //   this.httpClient
+  //     .get<string[]>("http://localhost:3899/api/GetAllEmployees")
+  //     .pipe(map((employees) => { return employees }))
+  //     .subscribe((emp: string[]) => {
+  //       debugger;
+  //       this.apiEmployees = emp;
+  //     });
 
-    const emp: fromUsersActions.UsersPayloadData = {
-      employees: this.apiEmployees
-    };
-    this.store.dispatch(new fromUsersActions.GetAllEmployees(emp));
+  //   const emp: fromUsersActions.UsersPayloadData = {
+  //     employees: this.apiEmployees
+  //   };
+  //   this.store.dispatch(new fromUsersActions.GetAllEmployees(emp));
+  //   // return this.apiEmployees;
+  // }
+
+  getAllUsers() {
+    debugger;
+    this.store.dispatch(new fromUsersActions.TryGetAllEmployees(null));
     // return this.apiEmployees;
   }
 

@@ -4,6 +4,7 @@ export const START_LOADING = "START_LOADING";
 export const STOP_LOADING = "STOP_LOADING";
 export const GET_USER_BY_ID = "GET_USER_BY_ID";
 export const GET_ALL_EMPLOYEES = "GET_ALL_EMPLOYEES";
+export const TRY_GET_ALL_EMPLOYEES = "TRY_GET_ALL_EMPLOYEES";
 
 // export class GetAllUsers implements Action {
 //   type: string = START_LOADING;
@@ -26,4 +27,9 @@ export class GetAllEmployees implements Action {
   constructor(public payload: UsersPayloadData) { }
 }
 
-export type UsersActions = GetUserById | GetAllEmployees;
+export class TryGetAllEmployees implements Action {
+  type: string = TRY_GET_ALL_EMPLOYEES;
+  constructor(public payload: UsersPayloadData) { }
+}
+
+export type UsersActions = GetUserById | GetAllEmployees | TryGetAllEmployees;

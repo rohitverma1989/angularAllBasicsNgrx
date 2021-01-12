@@ -22,6 +22,8 @@ import { BetterHighlightDirective } from './directives/better-highlight/better-h
 import { UsersService } from './services/users.service';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from "./store/app.reducers";
+import { EffectsModule } from '@ngrx/effects';
+import { UsersEffects } from './modules/users/store/users.effects';
 
 
 @NgModule({
@@ -45,7 +47,7 @@ import { appReducers } from "./store/app.reducers";
     AppRoutingModule,
     UsersModule,
     StoreModule.forRoot(appReducers),
-
+    EffectsModule.forRoot([UsersEffects])
   ],
   providers: [
     UsersService

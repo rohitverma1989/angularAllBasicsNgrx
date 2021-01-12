@@ -25,15 +25,17 @@ export function UsersReducer(state = initialState, action: fromUsersActions.User
   switch (action.type) {
     case fromUsersActions.START_LOADING:
       return { ...state, isLoading: true, users: state.users };
+
     case fromUsersActions.STOP_LOADING:
       return { ...state, isLoading: false, users: state.users }
+
     case fromUsersActions.GET_USER_BY_ID:
       var userId = action.payload.selectedUserId;
       var user = state.users.filter(function (x) { return Number(x.id) == Number(userId) });
       return { ...state, selectedUser: user[0] }
+
     case fromUsersActions.GET_ALL_EMPLOYEES:
       {
-        debugger;
         var emp = action.payload.employees;
         return { ...state, employees: emp }
       }
