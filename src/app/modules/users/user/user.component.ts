@@ -33,7 +33,6 @@ export class UserComponent implements OnInit, OnDestroy {
         selectedUserId: userId
       };
 
-      // this.user = this.usersService.getUserById(userId);
       this.store.dispatch(new fromUsersActions.GetUserById(emp));
       this.store.select("usersData").subscribe(
         (data) => {

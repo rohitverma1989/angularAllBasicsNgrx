@@ -20,7 +20,5 @@ export class AppComponent {
 
   goToAdmin() {
     this.router.navigate(["admin"]);
-
   }
-
 }

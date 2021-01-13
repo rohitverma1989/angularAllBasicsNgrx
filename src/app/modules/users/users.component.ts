@@ -21,20 +21,15 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
 
-    debugger;
+
     this.usersService.getAllUsers();
 
-    // this.isLoading$ = this.store.pipe(map(data => data.usersData.isLoading))
     this.store.select("usersData")
       .subscribe((data) => {
-        debugger;
         this.isLoading$ = data.isLoading;
         this.users$ = data.users;
         this.apiEmployees = data.employees;
       });
-
-    //this.apiEmployees = this.usersService.getAllUsers();
-
   }
 
   goToUserDetails(userId: string) {

@@ -6,12 +6,6 @@ export const GET_USER_BY_ID = "GET_USER_BY_ID";
 export const GET_ALL_EMPLOYEES = "GET_ALL_EMPLOYEES";
 export const TRY_GET_ALL_EMPLOYEES = "TRY_GET_ALL_EMPLOYEES";
 
-// export class GetAllUsers implements Action {
-//   type: string = START_LOADING;
-//   constructor(public payload: string) { }
-// }
-
-
 export interface UsersPayloadData {
   selectedUserId?: string,
   employees?: string[]

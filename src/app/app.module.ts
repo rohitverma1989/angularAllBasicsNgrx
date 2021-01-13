@@ -25,6 +25,9 @@ import { appReducers } from "./store/app.reducers";
 import { EffectsModule } from '@ngrx/effects';
 import { UsersEffects } from './modules/users/store/users.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+
 
 
 @NgModule({
@@ -49,7 +52,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     UsersModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([UsersEffects]),
-    StoreRouterConnectingModule
+    StoreRouterConnectingModule.forRoot(),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [
     UsersService

@@ -21,7 +21,7 @@ export class UsersEffects {
           .get<string[]>("http://localhost:3899/api/GetAllEmployees")
           .pipe(
             map((data) => {
-              debugger;
+
               const payload: fromUsersActions.UsersPayloadData = { employees: data }
               return new fromUsersActions.GetAllEmployees(payload)
             })
