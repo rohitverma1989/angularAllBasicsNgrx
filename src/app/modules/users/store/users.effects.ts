@@ -1,11 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Actions, Effect, ofType, createEffect } from "@ngrx/effects";
-import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
-import { EMPTY, of } from 'rxjs';
-import { Observable } from 'rxjs';
+import { Actions, Effect, ofType } from "@ngrx/effects";
+import { map, mergeMap, } from 'rxjs/operators';
 import * as fromUsersActions from "./users.actions"
-import { Action } from "@ngrx/store";
+
 
 
 @Injectable()
