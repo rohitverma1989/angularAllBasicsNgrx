@@ -24,6 +24,7 @@ import { StoreModule } from '@ngrx/store';
 import { appReducers } from "./store/app.reducers";
 import { EffectsModule } from '@ngrx/effects';
 import { UsersEffects } from './modules/users/store/users.effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { UsersEffects } from './modules/users/store/users.effects';
     AppRoutingModule,
     UsersModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([UsersEffects])
+    EffectsModule.forRoot([UsersEffects]),
+    StoreRouterConnectingModule
   ],
   providers: [
     UsersService
