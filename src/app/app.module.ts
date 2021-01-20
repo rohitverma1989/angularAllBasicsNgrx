@@ -27,6 +27,7 @@ import { UsersEffects } from './modules/users/store/users.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { UnitTestingComponent } from './unit-testing/unit-testing.component';
 
 
 
@@ -40,7 +41,8 @@ import { environment } from '../environments/environment';
     UserRegistrationFormComponent,
     ReactiveFormComponent,
     BasicHighlightDirective,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    UnitTestingComponent
   ],
   imports: [
     BrowserModule,
